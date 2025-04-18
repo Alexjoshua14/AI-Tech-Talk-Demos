@@ -15,6 +15,13 @@ export const ProjectCard = ({project}: {project: Project}) => {
             <div>
                 {project.shortDescription}
             </div>
+            <div className="flex gap-3 text-sm font-light italic">
+                {project.techStack.map(t => (
+                    <p className="whitespace-nowrap">
+                        {t}
+                    </p>
+                ))}
+            </div>
         </div>
     )
 }

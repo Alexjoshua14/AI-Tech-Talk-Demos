@@ -14,6 +14,9 @@ const ProjectSchema = z.object({
     difficulty: DifficultyEnum,
 })
 
+export const ProjectListSchema = z.array(ProjectSchema).max(10)
+
 export type Project = z.infer<typeof ProjectSchema>
+export type ProjectList = z.infer<typeof ProjectListSchema>
 
 export default ProjectSchema
