@@ -12,14 +12,14 @@ export default function BasicChat() {
     const { messages, input, handleInputChange, handleSubmit } = useChat()
 
     return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center p-20 gap-4">
+        <div className="w-screen h-[90dvh] flex flex-col justify-center items-center p-20 gap-4">
             <div className="h-min w-full flex items-center justify-center">
                 <h1 className="text-5xl font-medium">
                     Basic Chat
                 </h1>
             </div>
 
-            <div className="h-full w-full flex flex-col bg-secondary rounded-md bg-opacity-40 shadow-md max-w-4xl">
+            <div className="h-full w-full flex flex-col bg-zinc-100 rounded-md bg-opacity-40 shadow-lg max-w-4xl">
                 <div className="w-full h-20 flex gap-4 items-center justify-center shadow-sm p-4 rounded-t-md">
                     <h2 className="text-2xl font-medium">
                         AI Chat
