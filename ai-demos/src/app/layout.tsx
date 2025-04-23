@@ -41,15 +41,12 @@ export default function RootLayout({
               </h1>
             </Link>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-8 pr-4">
             <Link href="/" className="text-gray-800 hover:text-blue-500">
               Home
             </Link>
-            <Link href="/basic-chat" className="text-gray-800 hover:text-blue-500">
-              Basic Chat
-            </Link>
-            <Link href="/streaming-chat" className="text-gray-800 hover:text-blue-500">
-              Streaming Chat
+            <Link href="/chat-window" className="text-gray-800 hover:text-blue-500">
+              Chat
             </Link>
             <Link href="/generative-ui" className="text-gray-800 hover:text-blue-500">
               Gen UI

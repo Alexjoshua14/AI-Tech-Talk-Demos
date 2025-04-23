@@ -8,14 +8,14 @@ import { useChat } from "@ai-sdk/react"
 import { Send } from "lucide-react"
 
 
-export default function BasicChat() {
+export default function ChatWindow() {
     const { messages, input, handleInputChange, handleSubmit } = useChat()
 
     return (
         <div className="w-screen h-[90dvh] flex flex-col justify-center items-center p-20 gap-4">
             <div className="h-min w-full flex items-center justify-center">
                 <h1 className="text-5xl font-medium">
-                    Basic Chat
+                    Chat Window
                 </h1>
             </div>
 
@@ -27,9 +27,9 @@ export default function BasicChat() {
                 </div>
                 <div className="flex-grow overflow-auto p-4 space-y-4">
                     {
-                        messages.map((message, index) => (
+                        messages.map((message) => (
                             <Card
-                                key={index}
+                                key={message.id}
                                 className={`p-4 max-w-[80%] ${message.role === "user"
                                     ? "ml-auto bg-primary text-primary-foreground"
                                     : "mr-auto bg-card"

@@ -1,8 +1,6 @@
-'use server'
+
 import { ProjectCard } from "@/components/ProjectCard"
 import { generateProjects } from "@/lib/ai/projectGeneration"
-import { Project, ProjectList, ProjectListSchema } from "@/lib/schema/projectSchema"
-
 
 export default async function GenerativeUI() {
 
@@ -15,13 +13,14 @@ export default async function GenerativeUI() {
                     Generative UI Demo
                 </h1>
             </div>
-
+            
             <div className="h-full w-full flex flex-wrap gap-8 bg-secondary rounded-md bg-opacity-40 shadow-md max-w-4xl p-2">
-                {projects.map(project => (
-                    <ProjectCard project={project} />
+                {projects.map((project, index) => (
+                    <ProjectCard key={`${project.title}-${index}`} project={project} />
                 ))}
 
             </div>
+            
         </div>
     )
 

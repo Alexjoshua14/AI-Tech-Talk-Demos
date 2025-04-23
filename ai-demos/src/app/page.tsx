@@ -17,18 +17,25 @@ export default function Home() {
         <p className="text-lg">
           {`Tech Talk Demo AI Projects `}
         </p>
-        {/* <div className="flex">
-          {"Alex Joshua".split("").map((letter, index) => (
-            <div key={index} className="hover:scale-110">
-              <p>
-                {letter}
-              </p>
-            </div>
-          ))}
-        </div> */}
-        <p className="text-sm font-light italic hover:scale-110">
-          Alex Joshua
-        </p>
+        <div className="flex cursor-default">
+          <p className="hidden">
+            Alex Joshua
+          </p>
+          {"Alex Joshua".split("").map((letter, index) => {
+            if (letter == " ")
+              return (
+                <div className="w-1"></div>
+              )
+            else
+              return (
+                <div key={index} className="hover:scale-110 transitiion-all duration-300 ease-in-out subpixel-antialiased">
+                  <p>
+                    {letter}
+                  </p>
+                </div>
+              )
+          })}
+        </div>
       </main>
     </div>
   );
