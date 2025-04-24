@@ -1,10 +1,10 @@
 
 import { ProjectCard } from "@/components/ProjectCard"
+import { ProjectContainer } from "@/components/ProjectContainer"
 import { generateProjects } from "@/lib/ai/projectGeneration"
+import { Suspense } from "react"
 
 export default async function GenerativeUI() {
-
-    const projects = await generateProjects()
 
     return (
         <div className="w-screen min-h-screen flex flex-col justify-center items-center p-20 gap-4">
@@ -13,13 +13,9 @@ export default async function GenerativeUI() {
                     Generative UI Demo
                 </h1>
             </div>
-            
-            <div className="h-full w-full flex flex-wrap gap-8 bg-secondary rounded-md bg-opacity-40 shadow-md max-w-4xl p-2">
-                {projects.map((project, index) => (
-                    <ProjectCard key={`${project.title}-${index}`} project={project} />
-                ))}
-
-            </div>
+            <Suspense fallback={<h1 className="text-4xl">Loading..</h1>}>
+                <ProjectContainer />
+            </Suspense>
             
         </div>
     )

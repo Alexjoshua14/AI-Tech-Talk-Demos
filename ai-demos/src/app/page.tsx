@@ -1,5 +1,4 @@
 import { Commissioner } from "next/font/google";
-import Image from "next/image";
 
 const commisioner = Commissioner({
   subsets: ["latin"],
@@ -24,7 +23,7 @@ export default function Home() {
           {"Alex Joshua".split("").map((letter, index) => {
             if (letter == " ")
               return (
-                <div className="w-1"></div>
+                <div key={index} className="w-1"></div>
               )
             else
               return (
